@@ -34,15 +34,48 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
-/* write all the steps invloved */
+step 1: Declare inputs and outputs
+
+step 2: Create a clocked always block
+
+step 3: Combine inputs using concatenation
+
+step 4: Write the case statement
+
+step 5: Assign output based on case
 
 **PROGRAM**
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+    module sr_ff(s,r,clk,q,qbar);
+    input s,r,clk;
+    RTL LOGIC FOR FLIPFLOPS
+    output reg q;
+    output reg qbar;
+    initial
+    begin
+    q=0;
+    qbar=1;
+    end
+    always @(posedge clk)
+    begin
+    q=s|(~r&q);
+    qbar=r|(~s&~q);
+    end
+    endmodule
 
 **RTL LOGIC FOR FLIPFLOPS**
 
+![image](https://github.com/user-attachments/assets/6c3a73a3-0523-474c-8990-6ceafecad3df)
+
+
 **TIMING DIGRAMS FOR FLIP FLOPS**
 
+![image](https://github.com/user-attachments/assets/4c7609f6-743d-48ef-b7fa-4c82e1c238cd)
+
+
 **RESULTS**
+
+SR flipflop using verilog and validating their functionality is verified using their functional tables.
+
+
+
